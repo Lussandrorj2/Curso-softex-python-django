@@ -45,11 +45,20 @@ while True:
         "6- Sair.\n"))
 
         if opcao == "1":
-            pass
+            print(f"Seu saldo atual é de {saldo_atual}.")
         elif opcao == "2":
-            pass
+            valor_a_sacar = float(input("Entre com o valor a ser sacado: "))
+            if valor_a_sacar <= (saldo_atual + limite_saldo_negativo):
+                saldo_atual -= valor_a_sacar
+                print("Saldo liberado, retire seu valor.")
+            else:
+                print("Saldo insuficiente.")
         elif opcao == "3":
-            pass
+            depositar = float(input("Insera o valor a ser depositado: "))
+            if depositar > 0:
+                saldo += depositar
+            else:
+                print("Valor inválido.")
         elif opcao == "5":
             pass
         elif opcao == "6":

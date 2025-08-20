@@ -1,4 +1,5 @@
 """
+data 20/08/2025
 Progrma de banco
 1- rodar em loop infinito //ok
 2- ter conta e senha(validar)

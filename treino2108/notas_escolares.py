@@ -1,5 +1,5 @@
 print("### Programa de notas escolares com loop for ###")
-
+#add data: 21/08/2023
 #declaração
 notas = [] # lista para armazenar as notas
 soma_notas = 0 # variável para armazenar a soma das notas

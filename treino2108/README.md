@@ -59,4 +59,4 @@ Este programa faz parte dos **exercícios de prática em Python** para desenvolv
 - Manipulação de listas.
 
 ---
-✍️ Autor: **Lussandro Farias**
+

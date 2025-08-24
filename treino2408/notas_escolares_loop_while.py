@@ -10,6 +10,7 @@ nome = input("Digite o nome do aluno: ")
 matricula = input("Digite a matrícula do aluno: ")
 if not nome and not matricula:
     print("Nome e matrícula não podem estar vazios. Insira os valores corretamente.")
+    exit()
 
 while True:
     try: # tratamento de erro para entradas inválidas.
@@ -29,6 +30,10 @@ while True:
 
 if notas: # verifica se a lista de notas não está vazia.
     media = soma_notas / len(notas) # cálculo da média.
+
+    print("\n\033[36m==== Boletim Escolar ====\033[m")
+    print(f"Aluno: {nome}")
+    print(f"Matrícula: {matricula}")
     print(f"A média das notas é: {media:.2f}")
     print(f"As notas inseridas foram: {notas}")
 

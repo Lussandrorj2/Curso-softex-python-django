@@ -1,49 +1,59 @@
-print(">>>> Programa de notas escolares com Loop While <<<<")
+print(">>>> Programa de notas escolares com Loop While <<<<\n")
 
-# declaração
-notas = []
-soma_notas = 0 # variável para armazenar a soma das notas
-nome = ""
-matricula = ""
+while True:  # loop principal para múltiplos alunos
+    notas = []
+    soma_notas = 0
 
-nome = input("Digite o nome do aluno: ")
-matricula = input("Digite a matrícula do aluno: ")
-if not nome and not matricula:
-    print("Nome e matrícula não podem estar vazios. Insira os valores corretamente.")
-    exit()
+    # Entrada de dados do aluno
+    nome = input("Digite o nome do aluno: ").strip()
+    matricula = input("Digite a matrícula do aluno: ").strip()
 
-while True:
-    try: # tratamento de erro para entradas inválidas.
-        nota = float(input("Insira a nota (ou -1 para sair): "))
+    if not nome or not matricula:
+        print("Nome e matrícula não podem estar vazios. Insira os valores corretamente.\n")
+        continue  # volta ao início do loop principal
 
-        if nota == -1: # condição de saída do loop.
-            break
+    # Loop para inserir notas
+    while True:
+        try:
+            nota = float(input("Insira a nota (ou -1 para encerrar o cadastro deste aluno): "))
 
-        if 0 <= nota <= 10: # validação da nota com cade
-            notas.append(nota) # adiciona a nota à lista.
-            soma_notas += nota # soma as notas.
-        else:
-            print("Nota inválida. Por favor, insira uma nota entre 0 e 10.")
-        
-    except ValueError: # tratamento de erro para entradas inválidas.
-        print("Valor inválido. Por favor, insira uma nota entre 0 e 10.")
+            if nota == -1:
+                break  # sai do loop de notas
 
-if notas: # verifica se a lista de notas não está vazia.
-    media = soma_notas / len(notas) # cálculo da média.
+            if 0 <= nota <= 10:
+                notas.append(nota)
+                soma_notas += nota
+            else:
+                print("Nota inválida. Por favor, insira uma nota entre 0 e 10.")
 
-    print("\n\033[36m==== Boletim Escolar ====\033[m")
-    print(f"Aluno: {nome}")
-    print(f"Matrícula: {matricula}")
-    print(f"A média das notas é: {media:.2f}")
-    print(f"As notas inseridas foram: {notas}")
+        except ValueError:
+            print("Valor inválido. Por favor, insira apenas números.")
 
-    if media >= 9:
+    # Processamento final do aluno
+    if notas:
+        media = soma_notas / len(notas)
+        print("\n\033[36m==== Boletim Escolar ====\033[m")
+        print(f"Aluno: {nome}")
+        print(f"Matrícula: {matricula}")
+        print(f"A média das notas é: {media:.2f}")
+        print(f"As notas inseridas foram: {notas}")
+
+        if media >= 9:
             print(f"\033[34mExcelente! Você está aprovado com louvor {nome}!\033[m")
-    elif 7 <= media < 9:
-        print(f"\033[32mParabéns! Você está aprovado {nome}!\033[m")
-    elif 5 <= media < 7:
-        print(f"\033[33mVocê está de recuperação {nome}.\033[m")
-    elif 0 <= media < 5:
-        print(f"\033[31mInfelizmente, você está reprovado{nome}.\033[m")
+        elif 7 <= media < 9:
+            print(f"\033[32mParabéns! Você está aprovado {nome}!\033[m")
+        elif 5 <= media < 7:
+            print(f"\033[33mVocê está de recuperação {nome}.\033[m")
+        else:
+            print(f"\033[31mInfelizmente, você está reprovado {nome}.\033[m")
+    else:
+        print("Nenhuma nota foi inserida.")
 
-input("\nPressione Enter para sair...")# fim do programa    
+    # Pergunta se deseja cadastrar outro aluno
+    continua = input("\nDeseja cadastrar outro aluno? (S/N): ").strip().upper()
+    if continua != 'S':  # se não digitar 'S', sai do loop principal
+        print("Encerrando o programa...")
+        break  # agora o break está dentro do loop principal
+
+# Mantém a janela aberta
+input("\nPressione ENTER para sair do programa...")

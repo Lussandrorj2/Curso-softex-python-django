@@ -45,3 +45,5 @@ if notas: # verifica se a lista de notas não está vazia.
         print(f"\033[33mVocê está de recuperação {nome}.\033[m")
     elif 0 <= media < 5:
         print(f"\033[31mInfelizmente, você está reprovado{nome}.\033[m")
+
+input("\nPressione Enter para sair...")# fim do programa    

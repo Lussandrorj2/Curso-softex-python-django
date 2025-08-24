@@ -1,12 +1,13 @@
-# 📘 Programa de Notas Escolares com Loop While  
+# 📘 Programa de Notas Escolares com Loop While
 
-Este programa em **Python** foi desenvolvido para calcular a média de notas de um aluno, validando entradas, evitando erros e exibindo uma mensagem final de desempenho. Ele utiliza um **loop `while`** para permitir a inserção de várias notas até que o usuário decida encerrar.  
+Este programa em **Python** calcula a média de notas de um ou mais alunos, validando entradas e exibindo um boletim final. Ele utiliza um **loop `while`** para permitir a inserção de múltiplos alunos até que o usuário decida encerrar.
 
 ---
 
-## 🚀 Funcionalidades  
+## 🚀 Funcionalidades
+
 - Solicita o **nome** e a **matrícula** do aluno.  
-- Permite inserir **várias notas** até que o usuário digite `-1` para sair.  
+- Permite inserir **várias notas** para cada aluno, terminando com `-1`.  
 - **Validação de dados**:
   - Aceita apenas números entre **0 e 10**.  
   - Exibe mensagens de erro caso seja digitado um valor inválido.  
@@ -16,22 +17,35 @@ Este programa em **Python** foi desenvolvido para calcular a média de notas de 
   - `7.0 - 8.9` → Parabéns! Aprovado.  
   - `5.0 - 6.9` → Em recuperação.  
   - `< 5.0` → Reprovado.  
+- Pergunta se deseja cadastrar outro aluno:
+  - Digitar `S` → cadastrar novo aluno  
+  - Qualquer outra tecla → encerra o programa  
+- Mantém a janela aberta até que o usuário pressione **ENTER** no final.
 
 ---
 
-## 📌 Exemplo de Uso  
+## 📌 Exemplo de Uso
 
-```bash
+```text
 >>>> Programa de notas escolares com Loop While <<<<
+
 Digite o nome do aluno: João
 Digite a matrícula do aluno: 12345
-Insira a nota (ou -1 para sair): 9
-Insira a nota (ou -1 para sair): 7.5
-Insira a nota (ou -1 para sair): -1
+Insira a nota (ou -1 para encerrar o cadastro deste aluno): 9
+Insira a nota (ou -1 para encerrar o cadastro deste aluno): 7.5
+Insira a nota (ou -1 para encerrar o cadastro deste aluno): -1
 
-A média das notas é: 8.25
-As notas inseridas foram: [9.0, 7.5]
+==== Boletim Escolar ====
+Aluno: João
+Matrícula: 12345
+Notas: [9.0, 7.5]
+Média: 8.25
 Parabéns! Você está aprovado João!
+
+Deseja cadastrar outro aluno? (S/N): n
+Encerrando o programa...
+Pressione ENTER para sair do programa...
+
 
 ## 📂 Estrutura do Código
 

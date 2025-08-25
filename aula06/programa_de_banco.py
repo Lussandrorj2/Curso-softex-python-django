@@ -48,7 +48,7 @@ while True:
             print(f"Seu saldo atual é de {saldo_atual}.")
         elif opcao == "2":
             valor_a_sacar = float(input("Entre com o valor a ser sacado: "))
-            if valor_a_sacar <= (saldo_atual + limite_saldo_negativo):
+            if valor_a_sacar >0:
                 saldo_atual -= valor_a_sacar
                 print("Saldo liberado, retire seu valor.")
             else:
@@ -61,8 +61,8 @@ while True:
                 print("Valor inválido.")
         elif opcao == "4":
             boleto = float(input("Entre com o valor do boleto: "))
-            if boleto < (saldo_atual + limite_saldo_negativo):
-                saldo_atual += boleto
+            if boleto > 0:
+                saldo_atual -= boleto
             else:
                 print("Saldo insuficiente.")
         elif opcao == "5":

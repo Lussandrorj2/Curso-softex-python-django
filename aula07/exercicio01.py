@@ -1,9 +1,9 @@
 # Declaração
 #data25/08/2025
 import time
-print(" |||||████ LANCHONETE ███||||| ")
+print("\033[45m |||||████ LANCHONETE ███||||| \033[m")
 
-hamburguer = 21
+hamburguer = 21.90
 cupom = "999"
 desconto_cupom = 10
 while True:
@@ -11,14 +11,14 @@ while True:
     if produto == "hamburguer":
         desconto = input("Digite o número do cupom de desconto: ")
         time.sleep(2)
-        print("Pedido confirmado!")
+        print("\033[032mPedido confirmado!\033[m")
         valor = hamburguer*(1-desconto_cupom/100)
         if desconto == cupom:
             time.sleep(2)
-            print(f"O valor do produto com desconto: {valor:.2f}")
+            print(f"\033[034mO valor do produto com desconto: R$ {valor:.2f}\033[m")
             break
         elif desconto != cupom:
             time.sleep(1)
-            print(hamburguer)
+            print(f"\033[34mR$ {hamburguer}\033[m")
             break
                                 

@@ -33,5 +33,5 @@ if (lado_a < lado_b + lado_c) and (lado_b < lado_a + lado_c) and (lado_c < lado_
     else:
         print("Não pode ser um triângulo devido a diferença de lados.")
 else:
-    print("Não pode ser um triãngulo devido a soma de lados.")
+    print("Não pode ser um triângulo devido a soma de lados.")
 

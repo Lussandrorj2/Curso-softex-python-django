@@ -14,7 +14,7 @@ for num in lista:
         num_primos.append(num)
 
 print(f'Números: {lista}\nResultado: {num_primos}')
-        
+#data 01/09/25
 
 
 

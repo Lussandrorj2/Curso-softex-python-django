@@ -42,7 +42,7 @@ for registro in registros_acesso:
     duracao_minutos = registro[2]
     if status == "Sucesso":
         tempo_total_sucesso += duracao_minutos
-print(f"Tempo total de duraçao com sucesso é {tempo_total_sucesso}")
+print(f"Tempo total de todas as seções com sucesso é {tempo_total_sucesso} minutos.")
 
 
 

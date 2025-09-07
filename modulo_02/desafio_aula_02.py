@@ -33,7 +33,7 @@ print("Registros de acesso.: ")
 for r in registros_acesso:
     print(r)
 
-print(usuarios_sucesso)
+print(f'Usuários que tiveram sucesso ao fazer login: {usuarios_sucesso}')
 
 tempo_total_sucesso = 0
 for registro in registros_acesso:

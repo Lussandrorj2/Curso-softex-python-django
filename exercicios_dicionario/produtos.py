@@ -27,8 +27,9 @@ for produto, qdt in estoque.items():
    print(f'{produto} atualizado para {estoque_total} unidade(s).')
 
 print("Estoque total de todos os itens atualizado")
+estoque_final = 0
 for p, v in produtos.items():
-   estoque_inicial = estoque.get(produto,0)
-   estoque_final = v + estoque_inicial
-print(estoque_final)
+   estoque_inicial = estoque.get(p,0)
+   estoque_final += v + estoque_inicial
+print(f'Estoque total dos produtos → {estoque_final}')
  

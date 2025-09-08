@@ -1,5 +1,5 @@
 import pyfiglet
 
-figlet = pyfiglet.figlet_format("<<< Softex Backend Python >>>")
+figlet = pyfiglet.figlet_format("<<< Botafogo >>>")
 
 print(figlet)

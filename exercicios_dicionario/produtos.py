@@ -1,4 +1,4 @@
-produtos = {"capa iphone 12":10, "Capa iphone 13":15, "capa iphone 14":20}
+produtos = {"capa iphone 12":10, "capa iphone 13":15, "capa iphone 14":20}
 estoque = {}
 
 while True:
@@ -21,7 +21,12 @@ while True:
    else:
       print("Quantidade inválida. Adicione uma quantidade maior que zero.")
 
-print("\nEstoque final")
+print("\nEstoque final de capa item")
 for produto, qdt in estoque.items():
-   print(f"{produto} → {qdt} unidade(s)")
-print(f"Estoque atualizado total → {produtos[produto]}")
+   estoque_total = qdt + estoque.get(produto,0)
+   print(f'{produto} atualizado para {estoque_total} unidade(s).')
+
+print("Estoque total de todos os itens atualizado")
+for produto, qdt in estoque:
+   estoque_total_produtos = qdt + estoque
+   print(f'Quantidade total adicionado {estoque_total_produtos}')

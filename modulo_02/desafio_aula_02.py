@@ -1,7 +1,7 @@
 import pyfiglet
 
 print('')
-figlet = pyfiglet.figlet_format("Análise de dados de acesso".center(40))
+figlet = pyfiglet.figlet_format("Analise de dados de acesso".center(40))
 print(figlet)
 print('')
 

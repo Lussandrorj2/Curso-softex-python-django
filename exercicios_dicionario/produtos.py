@@ -1,5 +1,8 @@
 produtos = {"capa iphone 12":10, "capa iphone 13":15, "capa iphone 14":20}
 estoque = {}
+print(f"Capa iPhone 12\n"
+      "Capa iPhone 13\n"
+      "Capa iPhone 14\n")
 
 while True:
    produto = input("Digite o nome do produto ou 'parar' para sair: ").strip().lower()

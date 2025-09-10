@@ -1,3 +1,7 @@
+import pyfiglet
+
+print(pyfiglet.figlet_format("AGENDA"))
+
 agenda = dict()
 
 while True:

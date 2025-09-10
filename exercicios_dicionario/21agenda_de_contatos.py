@@ -1,15 +1,24 @@
 agenda = dict()
 
 while True:
-    print(" Menu:\n 1) Adicionar contato\n 2) Buscar contao\n 3) Sair\n")
+        operacao = input(" Menu:\n 1) Adicionar contato\n 2) Buscar contao\n 3) Sair\n")
 
-    adicionar_contato = input("Digite o nome do contato ou 'parar' para sair: ").strip().lower()
-    if adicionar_contato == "parar":
-        print("Programa encerrado...")
-        break
-    adicionar_numero = input("Digite o número de telefone: ").strip()
-
-    if adicionar_contato not in agenda:
-        agenda[adicionar_contato] = adicionar_numero
+        if operacao == "1":
+            nome = input("Digite o nome do contato: ")
+            num = input("Digite o número do contato: ")
+            agenda[nome] = num
+            print(f"Contato {nome} adicionado com sucesso.")
+        elif operacao == "2":
+            buscar = input("Digite o nome ou número do contato: ")
+            encontrado = False
+            for nome, num in agenda.items():
+                if buscar == nome or buscar == num:
+                    print(f"{nome} → {num}")
+        elif operacao == "3":
+            print("Operação encerrada.")
+            break
+        else:
+            print("Contato não encontrado.")
+  
 
     

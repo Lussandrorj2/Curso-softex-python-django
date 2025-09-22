@@ -1,33 +1,39 @@
 class Pessoa():
     def __init__(self, nome:str, idade:int):
-        self._nome = nome
-        self._idade = idade
+        if nome and isinstance(nome, int):
+            self._nome = nome
+        else:
+            self._nome = "Nome desconhecido"
+        if idade > 0 and isinstance(idade, int):    
+            self._idade = idade
+        else:
+            self._idade = "Idade desconhecida"    
 
-    @property
+    @property #DEVOLVE O VALOR ATRIBUIDO PROTEGIDO
     def nome(self):
         return self._nome   
     
-    @nome.setter
-    def nome(self, novo_nome):
-        if isinstance(novo_nome, (str)):
+    @nome.setter # ALTERA O VALOR ATRIBUIDO PROTEGIDO
+    def nome(self, novo_nome:str):
+        if isinstance(novo_nome, (str)) and novo_nome:
             self._nome = novo_nome
         else:
-            print("Erro! ")
+            print("Erro! O novo nome deve ser uma string e não vazia.")
     @property
     def idade(self):
         return self._idade
     
     @idade.setter
-    def idade(self, nova_idade):
-        if isinstance(nova_idade,(int)) and nova_idade >= 0:
+    def idade(self, nova_idade:int):
+        if isinstance(nova_idade,(int)) and nova_idade > 0:
             self._idade = nova_idade
         else:
-            print("Erro! Número não é inteiro ou positivo.")
+            print("Erro! Número deve ser inteiro e positivo.")
 
 
 
 
-pessoa1 = Pessoa("João", 36)
+pessoa1 = Pessoa("", -1)
 print(pessoa1.nome)
 pessoa1.nome="Zé"
 print(pessoa1.nome)

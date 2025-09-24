@@ -26,3 +26,11 @@ musica = Musica("One last berath",03.57, "Creed")
 video = Video("Numb", 3.50, "1080x900")
 
 dic_play = {"musicas":[],"videos":[]}
+dic_play["musicas"].append(musica)
+dic_play["videos"].append(video)
+
+print(dic_play)
+
+for i in dic_play.values():
+    for m in i:
+        m.exibir()

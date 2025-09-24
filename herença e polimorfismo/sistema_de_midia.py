@@ -22,7 +22,7 @@ class Video(Midia):
     def exibir(self):
         print(f"Título: {self.titulo} | Duração: {self.duracao_seg} | Resolução: {self.resolucao}")
 
-musica = Musica("One last berath",03.57, "Creed")
+musica = Musica("One last breath",03.57, "Creed")
 video = Video("Numb", 3.50, "1080x900")
 
 dic_play = {"musicas":[],"videos":[]}

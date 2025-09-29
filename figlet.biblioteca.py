@@ -1,5 +1,5 @@
 import pyfiglet
 
-figlet = pyfiglet.figlet_format("<<< Botafogo >>>")
+figlet = pyfiglet.figlet_format("<<< Hello world >>>")
 
 print(figlet)

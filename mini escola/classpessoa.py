@@ -7,4 +7,4 @@ class Pessoa:
     
     @property
     def nome(self):
-        return self.nome
+        return self._nome

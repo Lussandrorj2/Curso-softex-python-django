@@ -21,15 +21,15 @@ class Estudante(Pessoa):
         return f"Estudante: {self._nome} - Matricula: {self.matricula}"
 
 
-estudante = Estudante("João", 20, 1234)
-estudante.adicionandonotas("Matematica", 9.5)
-print(estudante)
+# estudante = Estudante("João", 20, 1234)
+# estudante.adicionandonotas("Matematica", 9.5)
+# print(estudante)
 
-print()
+# print()
 
-estudante2 = Estudante("Maria",19,1235)
-estudante.adicionandonotas("Matemática", 8.7)
-print(estudante2)
+# estudante2 = Estudante("Maria",19,1235)
+# estudante.adicionandonotas("Matemática", 8.7)
+# print(estudante2)
         
 
 

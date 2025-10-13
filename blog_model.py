@@ -6,25 +6,13 @@ class BlogModel:
 
     def __init__(self):
         self.db_conn = DatabaseConnection()
-        self._create_table()
-
-    def usuarios(self):
-        self.db_conn.connect()
-        self.db_conn.cursor.execute(
-            """"
-            CREATE TABLE IF NOT EXISTS usuario (
-            id_usuario INTEGER PRIMARY KEY AUTOINCREMENT,
-            nome TEXT NOT NULL,
-
-            );
-        """
-        )
+        self.tabela_blogs()
 
     def tabela_blogs(self):
         self.db_conn.connect()
         self.db_conn.cursor.execute(
             """
-            CREATE TABLE IF NOT EXISTS blog (
+            CREATE TABLE IF NOT EXISTS blogs (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             titulo TEXT NOT NULL,
             conteudo TEXT NOT NULL,

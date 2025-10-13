@@ -18,7 +18,7 @@ class BlogModel:
             conteudo TEXT NOT NULL,
             data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
             data_atualizacao DATETIME DEFAULT CURRENT_TIMESTAMP
-            id_user 
+            id_user (criar chave estrangeiro em processo... )
             );
         """
         )

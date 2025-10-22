@@ -1,4 +1,6 @@
 # user_service.py
+import re
+import hashlib
 from user_model import UserModel
 from hasher import hash_senha, verificar_senha
 
@@ -76,8 +78,10 @@ class UserService:
         ):
             return False, 'Email deve ter pelo menos 10 caracteres, uma @ e terminar com .com'
         
-        if len(nome_completo) < 1 or not nome_completo.isalpha:
-            return False, 'O nome deve ter apenas letras e não deve está vazio.'
+        if not nome_completo or not re.match(r"^[A-Za-zÀ-ÿ\s]+$", nome_completo):
+            return False, 'O nome deve ter apenas letras e não deve estar vazio.'
+        
+        senha_hash = hashlib.sha256(senha.encode()).hexdigest()
     
 
     def login_user(self, email: str, senha: str) -> tuple[dict | None, str]:
@@ -89,7 +93,7 @@ class UserService:
         e a mensagem Login bem-sucedido!.
         Caso contrario retorne None e a mensagem de erro
         """
-        
+
 
     def update_user_profile(
         self,

@@ -1,0 +1,1 @@
+litas_de_frutas = ['maçã', 'banana', 'uva', 'morango']  

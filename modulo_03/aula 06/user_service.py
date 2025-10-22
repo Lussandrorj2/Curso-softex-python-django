@@ -16,8 +16,21 @@ class UserService:
         verifique se o usuários existe e então retorne ele sem a sua senha
         caso ele não exista retorne None
         """
+        found_user = self.user_model.find_user_by_id(user['user_id'])
 
-        
+        if user:
+            return {
+                'id':user['id'],
+                'email':user['email'],
+                'nome_completo':user['nome_completo'],
+                'perfil_acesso':user['perfil_acesso'],
+                'data_criacao':user['data_criacao'],
+                'data_atualizacao':user['data_atualizacao']
+            }
+        else:
+            return None
+
+
 
     def _is_authorized(
         self,
@@ -32,6 +45,14 @@ class UserService:
         Se  action == "edit_self" retorne current_user_id == target_user_id
         No geral retorn false
         """
+        if current_user_profile == 'Diretoria':
+            return True
+        if not target_user_id:
+            return False
+        if action == 'edit_self':
+            return current_user_id == target_user_id
+        
+        return False
 
     def register_user(
         self,
@@ -47,6 +68,17 @@ class UserService:
         O campo Nome deve ter apenas letras e não deve estar vazio, retorne False se não tiver e a mensagem de erro.
         Caso os campos atendas as requisições, faça o hash da senha e salve use o método create_user da User Model
         """
+        if len(senha) < 8:
+            return False, 'A senha deve contar pelo menos 8 caracteres'
+        
+        if (
+            len(email) < 10 or '@' not in email or not email.endswith('.com')
+        ):
+            return False, 'Email deve ter pelo menos 10 caracteres, uma @ e terminar com .com'
+        
+        if len(nome_completo) < 1 or not nome_completo.isalpha:
+            return False, 'O nome deve ter apenas letras e não deve está vazio.'
+    
 
     def login_user(self, email: str, senha: str) -> tuple[dict | None, str]:
         """
@@ -57,6 +89,7 @@ class UserService:
         e a mensagem Login bem-sucedido!.
         Caso contrario retorne None e a mensagem de erro
         """
+        
 
     def update_user_profile(
         self,
